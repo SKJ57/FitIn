@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indian Fitness & Diet Tracker - Calculate calories and get diet plans.">
+    <title>FitIn - Indian Fitness & Diet Tracker</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons (Optional/CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">FIT<span class="highlight">IN</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#diet">Diet Plan</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Build Your <span class="highlight">Dream Physique</span></h1>
+            <p>Tailored diet plans with authentic Indian foods. Track calories, macro-nutrients, and achieve your
+                fitness goals.</p>
+            <a href="#calculator" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image-placeholder">
+            <!-- Ideally an image of a fit person or gym setting -->
+            <div class="glass-card decorative-card">
+                <i class="fas fa-dumbbell"></i>
+                <span>Strength</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2>Calorie & Macro <span class="highlight">Calculator</span></h2>
+            <div class="calculator-grid">
+                <!-- Form Side -->
+                <form id="fitness-form" class="glass-card">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male" checked>
+                            <label for="male" class="radio-label"><i class="fas fa-mars"></i> Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female" class="radio-label"><i class="fas fa-venus"></i> Female</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">Age (years)</label>
+                            <input type="number" id="age" name="age" placeholder="25" min="10" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" name="weight" placeholder="70" min="30" max="200" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" name="height" placeholder="175" min="100" max="250" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activity">Activity Level</label>
+                        <select id="activity" name="activity">
+                            <option value="1.2">Sedentary (Office job)</option>
+                            <option value="1.375">Light Exercise (1-2 days/week)</option>
+                            <option value="1.55" selected>Moderate Exercise (3-5 days/week)</option>
+                            <option value="1.725">Heavy Exercise (6-7 days/week)</option>
+                            <option value="1.9">Athlete (2x per day)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal">Goal</label>
+                        <select id="goal" name="goal">
+                            <option value="cut">Lose Weight (Cut)</option>
+                            <option value="maintain" selected>Maintain Weight</option>
+                            <option value="bulk">Gain Muscle (Bulk)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Calculate Plan</button>
+                </form>
+
+                <!-- Results Side (Hidden initially) -->
+                <div id="results-display" class="results-card glass-card hidden">
+                    <h3>Your Daily Targets</h3>
+                    <div class="calories-display">
+                        <span id="target-calories">2500</span>
+                        <small>kcal/day</small>
+                    </div>
+
+                    <div class="macros-grid">
+                        <div class="macro-item protein">
+                            <h4>Protein</h4>
+                            <span id="protein-grams">180g</span>
+                            <div class="progress-bar">
+                                <div style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="macro-item carbs">
+                            <h4>Carbs</h4>
+                            <span id="carbs-grams">250g</span>
+                            <div class="progress-bar">
+                                <div style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="macro-item fats">
+                            <h4>Fats</h4>
+                            <span id="fats-grams">70g</span>
+                            <div class="progress-bar">
+                                <div style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diet Recommendation Section -->
+    <section id="diet" class="diet-section">
+        <div class="container">
+            <h2>Recommended <span class="highlight">Indian Diet</span></h2>
+            <div id="diet-plan" class="diet-grid">
+                <!-- Diet items will be injected here by JS -->
+                <p class="placeholder-text">Calculate your macros above to see your personalized Indian diet plan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 FitIn Fitness. Built for Indian Fitness Enthusiasts.</p>
+    </footer>
+
+    <script src="indian_food_data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
