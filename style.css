@@ -219,6 +219,12 @@ input, select {
     font-size: 1rem;
 }
 
+select option {
+    background-color: #1a1a1a;
+    color: var(--text-light);
+    padding: 0.5rem;
+}
+
 input:focus, select:focus {
     outline: none;
     border-color: var(--primary-color);
