@@ -219,9 +219,15 @@ input, select {
     font-size: 1rem;
 }
 
+:root {
+    color-scheme: dark;
+    --primary-color: #39FF14;
+    ...
+}
+
 select option {
     background-color: #1a1a1a;
-    color: var(--text-light);
+    color: #ffffff;
     padding: 0.5rem;
 }
 
